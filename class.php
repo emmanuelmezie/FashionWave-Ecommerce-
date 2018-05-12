@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'dbadmin.php';
  
 	class db_class extends db_connect{	
  
@@ -7,16 +7,17 @@ require 'db.php';
 			$this->connect();
 		}
  
-        public function create( $product_cat,
+        public function create( 
+		 $product_cat,
          $product_title,
          $product_price,
          $product_desc, 
          $product_image, 
-         $product_keywords) {
+         $product_keyword) {
 		//prepare: prepares the SQL query, and returns a statement handle to be used for further operations on the statement
-			$stmt = $this->conn->prepare("INSERT INTO `products` (`product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`,`product_keywords`) VALUES (?, ?)") or die($this->conn->error);
+			$stmt = $this->conn->prepare("INSERT INTO `products` (`product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`,`product_keywords`) VALUES (?, ?, ?, ?, ?, ?)") or die($this->conn->error);
 		//bind_param: Binds variables to a prepared statement as parameters
-			$stmt->bind_param("ss", $product_cat, $product_title, $product_price, $product_desc, $product_image, $product_keywords);
+			$stmt->bind_param("ssssss", $product_cat, $product_title, $product_price, $product_desc, $product_image, $product_keyword);
 			if($stmt->execute()){
 				$stmt->close();
 				$this->conn->close();
@@ -25,7 +26,7 @@ require 'db.php';
 		}
  
 		public function read(){
-			$stmt = $this->conn->prepare("SELECT * FROM `products` ORDER BY `product_id` ASC") or die($this->conn->error);
+			$stmt = $this->conn->prepare("SELECT * FROM `products` ORDER BY `product_id` DESC") or die($this->conn->error);
 			if($stmt->execute()){
 			//get_result :  Gets a result set from a prepared statement
 				$result = $stmt->get_result();

@@ -4,6 +4,9 @@
 if (isset($_SESSION["uid"])) {
 	header("location:profile.php");
 }
+if (isset($_SESSION["Adminid"])) {
+	header("location:admin.php");
+}
 //in action.php page if user click on "ready to checkout" button that time we will pass data in a form from action.php page
 if (isset($_POST["login_user_with_product"])) {
 	//this is product list array

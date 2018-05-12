@@ -3,7 +3,7 @@
 		define('db_host','localhost');
 		define('db_user','root');
 		define('db_pass','');
-		define('db_name','fashionwave');
+		define('db_name','khanstore');
 		
 		class db_connect{
 			public $host = db_host;

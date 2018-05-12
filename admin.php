@@ -1,13 +1,19 @@
+<?php
+session_start();
+if(!isset($_SESSION["Adminid"])){
+	header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Fashion Wave</title>
-		<link rel="stylesheet" href="..\css\bootstrap.min.css"/>
-		<script src="..\js\jquery2.js"></script>
-		<script src="..\js\bootstrap.min.js"></script>
-		<script src="..\main.js"></script>
-		<link rel="stylesheet" type="text/css" href="..\style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<script src="js/jquery2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -23,18 +29,71 @@
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="..\index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li class="active"><a href="admin/index.php"><span class="glyphicon glyphicon-home"></span> Add Products</a></li>
-				<li><a href="..\categories.php"><span class="glyphicon glyphicon-modal-window"></span> Category</a></li>
-				<li><a href="..\aboutus.php"><span class="glyphicon glyphicon-modal-window"></span> About Us</a></li>
-				<li><a href="..\contact.php"><span class="glyphicon glyphicon-modal-window"></span> Contact</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="active"><a href="admin.php"><span class="glyphicon glyphicon-home"></span> Admin Dashboard</a></li>
+				<li><a href="categories.php"><span class="glyphicon glyphicon-modal-window"></span> Category</a></li>
+				<li><a href="aboutus.php"><span class="glyphicon glyphicon-modal-window"></span> About Us</a></li>
+				<li><a href="contact.php"><span class="glyphicon glyphicon-modal-window"></span> Contact</a></li>
 			</ul>
 		</div>
 	</div>
 </div>	
 		<p><br/></p>
 		<p><br/></p>
+		<p><br/></p>
 	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 col-xs-12">
+					<a class = "btn btn-info btn-lg" data-toggle = "modal" data-target = "#create_modal">
+                    <span class = "glyphicon glyphicon-edit"></span> Add Product</a>
+				</div>
+
+				<div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class = "modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h3 class = "text-success modal-title">Add Product</h3>
+							</div>
+							<form method = "POST" action = "addproduct.php" enctype="multipart/form-data">
+							<div class="modal-body">
+								<div class = "form-group">
+									<label>Product Image</label>
+									<input type = "file" name = "product_image"  class = "form-control" />
+								</div>
+								<div class = "form-group">
+									<label>Product Category</label>
+									<select name = "product_cat" class="form-control">
+										<option value="1">Men</option>
+										<option value="2">Women</option>
+									</select>
+								</div>
+								<div class = "form-group">
+									<label>Product Title</label>
+									<input type = "text" name = "product_title" class = "form-control" />
+								</div>	
+								<div class = "form-group">
+									<label>Product Price</label>
+									<input type = "text" name = "product_price" class = "form-control" />
+								</div>
+								<div class = "form-group">
+									<label>Product Description</label>
+									<input type = "text" name = "product_desc" class = "form-control" />
+								</div>
+								<div class = "form-group">
+									<label>Product Keyword</label>
+									<input type = "text" name = "product_keywords" class = "form-control" />
+								</div>
+							</div>
+						<div class="modal-footer">
+							<button class="btn btn-warning" name = "create"><span class = "glyphicon glyphicon-plus"></span> Add Product</button>
+						</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p><br/></p>
 			<div class="row">
 						<div class="col-md-10 col-md-offset-1 col-xs-12">
                         <table class = "table table-bordered table-hover">
@@ -54,7 +113,7 @@
                                 ?>
                                     <tr>
                                         <td><?php echo $fetch['product_title']?></td>
-                                        <td><?php echo "<img src='../product_images/".$fetch['product_image']."' width='150px'>" ?></td>
+                                        <td><?php echo "<img src='product_images/".$fetch['product_image']."' width='150px'>" ?></td>
                                         <td><?php echo "$" . $fetch['product_price']?></td>
                                         <td><?php echo $fetch['product_desc']?></td>
                                         <td><center>
@@ -153,7 +212,7 @@
 		$('.del_product_id').on('click', function(){
 			$product_id = $(this).attr('name');
 			$('.del_mem').on('click', function(){
-				window.location = "index.php?product_id=" + $product_id;
+				window.location = "addproduct.php?product_id=" + $product_id;
 			});
 		});
  

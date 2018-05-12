@@ -14,7 +14,7 @@
 		$conn->update($product_cat, $product_title, $product_price, $product_desc, $product_id);
 		echo '
 			<script>alert("Updated Successfully")</script>;
-			<script>window.location = "index.php"</script>;
+			<script>window.location = "admin.php"</script>;
 		';
 	}
 ?>
@@ -33,7 +33,7 @@
 </div>	
 <div class = "form-group">
 	<label>Product Price</label>
-	<input type = "text" name = "product_price" value = "<?php echo "$".$fetch['product_price']?>" class = "form-control" />
+	<input type = "text" name = "product_price" value = "<?php echo $fetch['product_price']?>" class = "form-control" />
 </div>
 <div class = "form-group">
 	<label>Product Description</label>

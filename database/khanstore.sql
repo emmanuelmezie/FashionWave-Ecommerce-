@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2018 at 06:14 PM
+-- Generation Time: May 12, 2018 at 01:30 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -100,7 +100,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
-(10, 2, 'RED LADIES DRESS NEW', 0, 'RED LADIES DRESS', 'reddress.jpg', 'red dress '),
+(10, 2, 'RED LADIES DRESS', 200, 'RED LADIES DRESS', 'reddress.jpg', 'red dress '),
 (11, 1, 'JACKETS & COATS', 1200, 'COATS', 'img1.jpg', 'COATS'),
 (12, 2, 'LADIES CASUAL', 1500, 'ladies casual ', 'imglady2.jpg', 'girls casual'),
 (13, 2, 'SpringAutumnDress', 1200, 'girls dress', 'Spring-Autumn-Winter-Young-Ladies-Casual-Wool-Dress-Women-s-One-Piece-Dresse-Dating-Clothes-Medium.jpg_640x640.jpg', 'girl dress'),
@@ -113,7 +113,8 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_p
 (23, 2, 'Girls cloths', 1900, 'sadsf', 'GirlsClothing_Widgets.jpg', 'formal kids wear dress'),
 (24, 1, 'JACKETS & COATS', 1400, 'COATS', 'img4.jpg', 'Coats'),
 (26, 1, 'FORMAL GIRL', 650, 'formal girl', 'imglady1.jpg', 'formal girl'),
-(40, 2, 'Formal girls dress', 3000, 'Formal girls dress', 'girl-walking.jpg', 'ladies');
+(40, 2, 'Formal girls dress', 3000, 'Formal girls dresses', 'girl-walking.jpg', 'ladies'),
+(49, 1, 'fffff', 456, 'ffff', 'myavarta.PNG', 'fffff');
 
 -- --------------------------------------------------------
 
@@ -123,6 +124,7 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_title`, `product_p
 
 CREATE TABLE `user_info` (
   `user_id` int(10) NOT NULL,
+  `role` varchar(30) NOT NULL DEFAULT 'user',
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `email` varchar(300) NOT NULL,
@@ -136,8 +138,8 @@ CREATE TABLE `user_info` (
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(1, 'chime', 'emmanuel', 'irozuruchimezerem@gmail.com', '74b45fcc63968825ac0d6fe9a2238036', '8062159230', '74A Road 5, Locwcost housing estate Umuahia', 'Abia State');
+INSERT INTO `user_info` (`user_id`, `role`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
+(1, 'admin', 'chime', 'emmanuel', 'irozuruchimezerem@gmail.com', '74b45fcc63968825ac0d6fe9a2238036', '8062159230', '74A Road 5, Locwcost housing estate Umuahia', 'Abia State');
 
 --
 -- Indexes for dumped tables
@@ -186,22 +188,22 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
