@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if(isset($_SESSION["uid"])){
-	header("location:profile.php");
-}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +24,7 @@ if(isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -44,7 +40,7 @@ if(isset($_SESSION["uid"])){
 		          <input type="text" class="form-control" placeholder="Search" id="search">
 		        </div>
 		        <button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
-		     </form>
+		    </form>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge"> 0 </span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
@@ -59,12 +55,7 @@ if(isset($_SESSION["uid"])){
 							</div>
 							<div class="panel-body">
 								<div id="cart_product">
-								<!--<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>-->
+							
 								</div>
 							</div>
 							<div class="panel-footer"></div>

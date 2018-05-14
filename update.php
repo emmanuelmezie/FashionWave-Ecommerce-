@@ -20,7 +20,7 @@
 ?>
 
 <div class = "form-group">
-	<?php echo "<img src='../product_images/".$fetch['product_image']."' width='150px'>" ?>
+	<?php echo "<img src='product_images/".$fetch['product_image']."' width='150px'>" ?>
 </div>
 <div class = "form-group">
 	<label>Product Category</label>

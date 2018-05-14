@@ -53,7 +53,7 @@ if(isset($_POST["getProduct"])){
 							<div class='panel panel-default'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:225px; height:225px;'/>
+								  <a href='product.php?product_id=$pro_id'><img src='product_images/$pro_image' style='width:225px; height:225px;'/></a>
 								</div>
 								<div class='panel-heading'>$$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-primary btn-xs'>AddToCart</button>
@@ -86,7 +86,7 @@ if(isset($_POST["getFeaturedProduct"])){
 							<div class='panel panel-default'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:225px; height:225px;'/>
+								<a href='product.php?product_id=$pro_id'><img src='product_images/$pro_image' style='width:225px; height:225px;'/></a>
 								</div>
 								<div class='panel-heading'>$.$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
@@ -118,7 +118,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["search"])){
 							<div class='panel panel-default'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:225px; height:225px;''/>
+								<a href='product.php?product_id=$pro_id'><img src='product_images/$pro_image' style='width:225px; height:225px;''/></a>
 								</div>
 								<div class='panel-heading'>$.$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>

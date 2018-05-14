@@ -1,8 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["Adminid"])){
-	header("location:index.php");
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +23,7 @@ if(!isset($_SESSION["Adminid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">

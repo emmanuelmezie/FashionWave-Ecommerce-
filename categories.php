@@ -31,7 +31,7 @@ if(isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -103,7 +103,6 @@ if(isset($_SESSION["uid"])){
 
 
 	<div class="container-fluid">
-		
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-2 col-xs-12">
@@ -112,8 +111,7 @@ if(isset($_SESSION["uid"])){
 			</div>
 			<div class="col-md-8 col-xs-12">
 				<div row>
-					<a href="categories.php"><img src='slides_img/slide-2-23.jpg' class="img-responsive" style="border-radius: 10px; margin-bottom:20px;width: 950px;" /></a>	
-				  
+					<a href="categories.php"><img src='slides_img/slide-2-23.jpg' class="img-responsive" style="border-radius: 10px; margin-bottom:20px;width: 950px;" /></a>				  
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-xs-12" id="product_msg">
@@ -124,19 +122,15 @@ if(isset($_SESSION["uid"])){
 					<div class="panel-body">
 						<div id="get_product">
 							<!--Here we get product jquery Ajax Request-->
-						</div>
-						
+						</div>			
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
-
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
-
 	<div class="container-fluid" style="background:#3E4551;height:70px;">	
 				<div class="row" style="color:#ffffff; margin-top:2px;">
 					<div align="center" style="font-size:35px;">

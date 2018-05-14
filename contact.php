@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if(isset($_SESSION["uid"])){
-	header("location:profile.php");
-}
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,7 +20,7 @@ if(isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -149,6 +141,82 @@ if(isset($_SESSION["uid"])){
 								 		 	</ul>
 								 		 </li>
 								 	</ol>
+									 <button type="submit" class="btn btn-primary" data-toggle = "modal" data-target = "#return">Return Policy</button>
+									 <div class="modal fade" id="return" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+												<h3>Fashion Wave ONLINE RETURNS</h3>
+
+												<p>
+												 We are unable to offer free shipping for returns on sale items.
+												If you wish to return a sale item, please send back using your Collect+ label and we will deduct £3.95 from the refundable total.
+												We include the Free Post returns information with your order.
+												</p>
+												<p>
+												You must obtain Proof of Postage when sending parcels to us as the items are your responsibility until they are received by our warehouse.
+												We are unable to accept online returns in our stores, please follow the below instructions to return an online purchase.
+												</p>
+
+												<h3>RETURNS INSTRUCTIONS</h3>
+
+												<p>
+												We want you to be 100% delighted with your purchase. You can let us know you want to return an item up to 14 days from the day your order is delivered. 
+												You then have a further 14 days to return the item to us. 
+												</p>
+
+												<p>
+												Please note, all returned items must be unworn and have tags attached. Until we receive your return to our warehouse, the items and their condition are your 
+												responsibility Collect+ Fuss Free Returns If you are a UK customer you can return your order free via any local supermarket, newsagent or corner shop that 
+												offers the Collect+ service. There are thousands of shops nationwide offering the service and Collect+ shops have extended opening hours, with many shops
+												open seven days a week.
+												</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									 <button type="submit" class="btn btn-default" data-toggle = "modal" data-target = "#delivery">Delivery Policy</button>
+									 <div class="modal fade" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+												<h3>SHIPPING RATES AND DELIVERY TIMES</h3>
+
+												<p>
+												Shipping Rates & Delivery
+												Free for a limited time only Economy Courier Delivery in the UK on orders over £50.00
+												Please select the Free Option at the checkout to take advantage of this
+												</p>
+												<p>
+												IMPORTANT NOTE: Orders must be received by 2pm Monday-Friday to be processed the same day. Any item ordered after 2pm or 
+												at the weekend will be processed and dispatched the next working day. 
+												</p>
+												<p>
+												Please bear this in mind with our Next Day and 48 Hour Delivery promise.by our warehouse.
+												We are unable to accept online returns in our stores, please follow the below instructions to return an online purchase.
+												</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									 <button type="submit" class="btn btn-primary" data-toggle = "modal" data-target = "#service">Service Policy</button>
+									 <div class="modal fade" id="service" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+												<h3>Service Policy</h3>
+												<p>
+												Your use of a LimeRoad website www.limeroad.com (hereinafter referred to as "LimeRoad/ LimeRoad Website/ Website") and 
+												its services and tools are governed by the following terms and conditions ("Terms of Use"). 
+												If You transact on LimeRoad, You shall be subject to the policies that are applicable to the website for such transaction. 
+												</p>
+												
+												</div>
+											</div>
+										</div>
+									</div>
 							    </div>
 							 </div>
 
@@ -169,6 +237,7 @@ if(isset($_SESSION["uid"])){
 	</div>
 		
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>
 
 

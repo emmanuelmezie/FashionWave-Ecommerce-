@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if(isset($_SESSION["uid"])){
-	header("location:profile.php");
-}
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,7 +20,7 @@ if(isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">

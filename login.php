@@ -53,5 +53,25 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 		}
 	
 }
+elseif(isset($_POST["email"]) && isset($_POST["password"])){
+	$email = mysqli_real_escape_string($con,$_POST["email"]);
+	$password = md5($_POST["password"]);
+	$sql2 = "SELECT * FROM user_info WHERE email = '$email' AND password = '$password' AND role='admin' ";
+	$run_query2 = mysqli_query($con,$sql2);
+	$count = mysqli_num_rows($run_query2);
+	//if user record is available in database then $count will be equal to 1
+	if($count == 1){
+		$row = mysqli_fetch_array($run_query2);
+		$_SESSION["adminid"] = $row["user_id"];
+		
+			//if user is login from page we will send login_success
+			echo "login_success";
+			exit();
+		}else{
+			echo "<span style='color:red;'>Please make user you are an Admin..!</span>";
+			exit();
+		}
+	
+}
 
 ?>

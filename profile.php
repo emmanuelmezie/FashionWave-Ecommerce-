@@ -30,7 +30,7 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -40,6 +40,16 @@ if(!isset($_SESSION["uid"])){
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li style="width:300px;left:5px;top:10px;"><input type="text" class="form-control" id="search"></li>
+				
+				<?php
+					  require 'class.php';
+					  $conn = new db_class();
+					  $read = $conn->read();
+					  
+
+				?>
+
+
 				<li style="top:10px;left:20px;"><button class="btn btn-primary" id="search_btn">Search</button> </li>
 				<li style="left:5px;"><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
@@ -66,13 +76,11 @@ if(!isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php echo "Hi,".$_SESSION["name"]; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <?php echo "Hi,".$_SESSION["name"]; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart"> Cart</a></li>
 						<li class="divider"></li>
-						<li><a href="customer_order.php" style="text-decoration:none; color:blue;">Orders</a></li>
-						<li class="divider"></li>
-						<li><a href="" style="text-decoration:none; color:blue;">Chnage Password</a></li>
+						<li><a href="" style="text-decoration:none; color:blue;">Change Password</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>

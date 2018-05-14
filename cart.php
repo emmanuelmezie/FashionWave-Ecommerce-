@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +23,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Fashion Wave</a>
+				<a href="index.php" class="navbar-brand"><img src="logo.png" alt="logo"/></a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -45,9 +41,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-2"></div>
-			<div class="col-md-8" id="cart_msg">
-				<!--Cart Message--> 
-			</div>
+			<div class="col-md-8" id="cart_msg"></div>
 			<div class="col-md-2"></div>
 		</div>
 		<div class="row">
@@ -64,19 +58,13 @@
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
 							<div class="col-md-2 col-xs-2"><b>Price in $</b></div>
 						</div>
-						<div id="cart_checkout"></div>
-						
+						<div id="cart_checkout"></div>			
 						</div> 
 					</div>
 				</div>
 			</div>
-			
 		</div>
-
-		<p><br/></p>
-		<p><br/></p>
-		<p><br/></p>
-
+		<p><br/></p><p><br/></p><p><br/></p>
 		<div class="container-fluid" style="background:#3E4551;height:70px;">	
 				<div class="row" style="color:#ffffff; margin-top:2px;">
 					<div align="center" style="font-size:35px;">
@@ -105,7 +93,6 @@
 					</div>
 				</div>
 	</div>
-
 	<div class="container-fluid" style="background:#000000;height:50px;">	
 				<div class="row" style="background:#000000;color:#ffffff; margin-top:20px;">
 					<div align="center" style="font-size: 14px;color:#c2c2c2;">&copy; 2018 Copyright: Fashion Wave</div>
